@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #2980b9;
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #4CAF50;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.section-card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 1em;
+}
+
+ol {
+    list-style: decimal;
+    margin-left: 25px;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+strong {
+    color: #e74c3c;
+}
+
+/* Accordion Styles */
+.lesson-accordion {
+    margin-top: 20px;
+}
+
+.lesson-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-title {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.lesson-title:hover {
+    background-color: #2980b9;
+}
+
+.lesson-title::after {
+    content: '+';
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.lesson-title.active::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.lesson-content {
+    padding: 0 20px; /* 초기에는 패딩 상하를 0으로 설정하여 닫혔을 때 공간 차지 않도록 */
+    background-color: #fcfcfc;
+    overflow: hidden;
+    max-height: 0; /* JavaScript가 이 값을 변경하여 내용을 펼침 */
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* max-height와 padding 모두 전환 적용 */
+}
+
+.lesson-content.show {
+    padding: 20px; /* 펼쳐졌을 때 패딩 추가 */
+    max-height: 2000px; /* 충분히 큰 값으로 설정하여 내용이 다 보이도록 */
+}
+
+.footer-text {
+    text-align: center;
+    color: #7f8c8d;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .lesson-title {
+        font-size: 1.2em;
+        padding: 12px 15px;
+    }
+
+    .lesson-content {
+        padding: 0 15px; /* 모바일에서도 패딩 조절 */
+    }
+
+    .lesson-content.show {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .lesson-title {
+        font-size: 1.1em;
+        padding: 10px 12px;
+    }
+
+    .lesson-content {
+        padding: 0 10px; /* 모바일에서도 패딩 조절 */
+    }
+    .lesson-content.show {
+        padding: 10px;
+    }
+}
